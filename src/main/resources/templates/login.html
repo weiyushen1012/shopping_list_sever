@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <title>Login - Shopping List</title>
+  </head>
+  <body>
+
+    <header th:insert="fragments/header.html :: header" ></header>
+
+    <div id="login-container" class="container">
+      <div th:if="${param.error}" class="notification is-danger is-light">
+        <button class="delete"></button>
+        Invalid username or password.
+      </div>
+
+      <main class="login-box center">
+
+        <form class="field" th:action="@{/login}" method="post">
+
+          <h1 class="title is-4">Log In</h1>
+
+          <div class="control">
+            <label class="label">
+              Email
+              <input class="input" type="email" name="username" required>
+            </label>
+          </div>
+
+          <label class="label">
+            Password
+            <input class="input" type="password" name="password" required>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" name="remember-me">
+            Remember me
+          </label>
+
+          <div class="auth-submit">
+            <input class="button is-primary" type="submit" value="Log in">
+          </div>
+
+          <p>Do not have an account? <a href="/signup">Sign Up</a></p>
+
+        </form>
+      </main>
+    </div>
+
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

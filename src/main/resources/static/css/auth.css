@@ -1,0 +1,22 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.login-box {
+  margin-top: 2em;
+}
+
+.login-box > form {
+  min-width: 350px;
+}
+
+label {
+  margin-bottom: 1em;
+}
+
+.auth-submit > input[type="submit"] {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+}
