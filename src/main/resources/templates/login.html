@@ -13,7 +13,7 @@
 
     <header th:insert="fragments/header.html :: header" ></header>
 
-    <div id="login-container" class="container">
+    <div id="auth-container" class="container">
       <div th:if="${param.error}" class="notification is-danger is-light">
         <button class="delete"></button>
         Invalid username or password.

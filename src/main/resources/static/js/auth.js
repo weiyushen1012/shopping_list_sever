@@ -1,6 +1,6 @@
-const loginContainer = document.getElementById('auth-container');
+const authContainer = document.getElementById('auth-container');
 
-loginContainer.addEventListener('click', event => {
+authContainer.addEventListener('click', event => {
   const current = event.target;
 
   if (current.nodeName.toLowerCase() === 'button' && current.classList.contains('delete')) {

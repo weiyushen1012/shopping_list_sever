@@ -13,21 +13,31 @@
     <nav th:fragment="header" class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+          <span class="navbar-item">
+            <h1 class="title is-6">SHOPPING LIST</h1>
+          </span>
+          <a id="app-burger-button" role="button" class="navbar-burger burger" aria-label="menu"
+             aria-expanded="false"
+             data-target="app-navbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </a>
         </div>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <form th:action="@{/logout}" sec:authorize="isAuthenticated()">
-                <input class="button" type="submit" method="get" value="Logout" />
-              </form>
+        <div id="app-navbar-control" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <form th:action="@{/logout}" sec:authorize="isAuthenticated()">
+                  <input class="button" type="submit" method="get" value="Logout" />
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
+
   </body>
 </html>
