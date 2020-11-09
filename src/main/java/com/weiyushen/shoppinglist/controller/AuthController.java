@@ -16,11 +16,6 @@ public class AuthController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping
-    public String getHomePage() {
-        return "home";
-    }
-
     @GetMapping("error")
     public String getErrorPage() {
         return "error";

@@ -2,16 +2,16 @@ package com.weiyushen.shoppinglist.model;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
     private String email;
     private String password;
@@ -19,6 +19,10 @@ public class User {
     private boolean isEnabled;
     private Date created;
     private Date updated;
+
+    @OneToMany(mappedBy = "user")
+    private List<ShoppingList> shoppingListList;
+
 
     public Integer getId() {
         return id;
@@ -74,5 +78,13 @@ public class User {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public List<ShoppingList> getShoppingListList() {
+        return shoppingListList;
+    }
+
+    public void setShoppingListList(List<ShoppingList> shoppingListList) {
+        this.shoppingListList = shoppingListList;
     }
 }

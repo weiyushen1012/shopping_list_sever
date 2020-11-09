@@ -26,10 +26,14 @@
         </div>
 
         <div id="app-navbar-control" class="navbar-menu">
+          <div class="navbar-start" sec:authorize="isAuthenticated()">
+            <a id="create-new-list" class="navbar-item">Create New List</a>
+            <a id="select-list" class="navbar-item">Select List</a>
+          </div>
           <div class="navbar-end">
             <div class="navbar-item">
-              <div class="buttons">
-                <form th:action="@{/logout}" sec:authorize="isAuthenticated()">
+              <div class="buttons" sec:authorize="isAuthenticated()">
+                <form th:action="@{/logout}">
                   <input class="button" type="submit" method="get" value="Logout" />
                 </form>
               </div>
